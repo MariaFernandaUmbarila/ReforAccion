@@ -8,4 +8,9 @@
     <string name="inputPasswordString">Ingrese la contraseña</string>
     <string name="cellphoneInputLabel">Número de celular</string>
     <string name="passwordInputLabel">Contraseña</string>
+    <string name="nameString">Nombre a registrar</string>
+    <string name="nameInputLabel">Nombre completo</string>
+    <string name="passwordConfirmInputLabel">Confirmar contraseña</string>
+    <string name="inputPasswordConfString">Confirme contraseña</string>
+    <string name="termsCheckLabel">Acepto los términos y condiciones</string>
 </resources>
