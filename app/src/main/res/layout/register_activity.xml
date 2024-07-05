@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/returnRegisterButton"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/mainBackground"
@@ -12,15 +12,17 @@
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="334dp"
-        android:layout_height="70dp"
+        android:layout_height="0dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
+        android:layout_marginBottom="573dp"
         android:text="@string/titleText"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#755944"
         android:textSize="48sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextSizeCheck,TextContrastCheck" />
@@ -206,5 +208,18 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:backgroundTint="#755944"
+        android:contentDescription="@string/returnFromRegister"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

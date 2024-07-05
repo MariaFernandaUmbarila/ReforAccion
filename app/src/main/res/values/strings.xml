@@ -13,4 +13,5 @@
     <string name="passwordConfirmInputLabel">Confirmar contraseña</string>
     <string name="inputPasswordConfString">Confirme contraseña</string>
     <string name="termsCheckLabel">Acepto los términos y condiciones</string>
+    <string name="returnFromRegister">Retornar</string>
 </resources>
