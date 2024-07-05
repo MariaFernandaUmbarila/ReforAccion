@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ReforAccion</string>
+    <string name="titleText">ReforAcción</string>
+    <string name="forgotPassTextString">¿Olvidaste la contraseña?</string>
+    <string name="cellphoneNumberString">Número de celular registrado</string>
+    <string name="passwordTextInput">Ingresar</string>
+    <string name="loginButtonString">Registrarse</string>
+    <string name="inputPasswordString">Ingrese la contraseña</string>
+    <string name="cellphoneInputLabel">Número de celular</string>
+    <string name="passwordInputLabel">Contraseña</string>
 </resources>
