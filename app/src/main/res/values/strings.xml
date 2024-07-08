@@ -14,4 +14,7 @@
     <string name="inputPasswordConfString">Confirme contraseña</string>
     <string name="termsCheckLabel">Acepto los términos y condiciones</string>
     <string name="returnFromRegister">Retornar</string>
+    <string name="statsButtonLabel">Estadísticas</string>
+    <string name="catButtonLabel">Categorías\n</string>
+    <string name="tipsButtonLabel">Consejos\n</string>
 </resources>
