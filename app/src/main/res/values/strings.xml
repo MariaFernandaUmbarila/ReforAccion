@@ -17,4 +17,11 @@
     <string name="statsButtonLabel">Estadísticas</string>
     <string name="catButtonLabel">Categorías\n</string>
     <string name="tipsButtonLabel">Consejos\n</string>
+    <string name="plantsPlantedLabel">Cantidad de plantas plantadas</string>
+    <string name="mostSownLabel">Zona con mayor siembra</string>
+    <string name="monthLabel">Mes</string>
+    <string name="averageCostLabel">Costo promedio</string>
+    <string name="totalAverageLabel">Promedio de costos:</string>
+    <string name="minPlantedLabel">Mínimo plantado:</string>
+    <string name="maxPlantedLabel">Máximo plantado:</string>
 </resources>
