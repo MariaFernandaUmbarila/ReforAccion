@@ -6,4 +6,5 @@
     <color name="purpleButtonsColor">#381785</color>
     <color name="darkGreenTextColor">#1D311A</color>
     <color name="mediumGreenColor">#074311</color>
+    <color name="inputBoxColor">#E1EDE1</color>
 </resources>

@@ -11,35 +11,35 @@
 
     <TextView
         android:id="@+id/titleText"
-        android:layout_width="334dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="332dp"
+        android:layout_height="62dp"
         android:layout_marginEnd="40dp"
-        android:layout_marginBottom="573dp"
+        android:foregroundGravity="center"
+        android:gravity="center"
         android:text="@string/titleLabel"
         android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#755944"
+        android:textColor="@color/brownTitleColor"
         android:textSize="48sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/returnButtonReg"
+        app:layout_constraintBottom_toTopOf="@+id/registerFormLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.717"
         tools:ignore="TextSizeCheck,TextContrastCheck" />
 
     <LinearLayout
         android:id="@+id/registerFormLayout"
-        android:layout_width="338dp"
-        android:layout_height="538dp"
+        android:layout_width="345dp"
+        android:layout_height="546dp"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:layout_marginBottom="76dp"
         android:background="@drawable/form_background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.583"
         tools:ignore="TextSizeCheck">
 
         <TextView
@@ -51,6 +51,7 @@
             android:layout_marginRight="17dp"
             android:text="@string/cellphoneInputLabel"
             android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -61,8 +62,13 @@
             android:layout_marginRight="17dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColorHint="#758368"
-            app:hintEnabled="true">
+            app:boxBackgroundColor="@color/inputBoxColor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/mediumGreenColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/cellphoneInput"
@@ -70,11 +76,10 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/cellphoneInputLabel"
                 android:inputType="number"
-                android:shadowColor="#A9A4A4"
-                android:shadowRadius="15"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -88,6 +93,7 @@
             android:layout_marginRight="17dp"
             android:text="@string/nameInputLabel"
             android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -99,19 +105,24 @@
             android:gravity="center"
             android:textAlignment="center"
             android:textColorHint="#758368"
-            app:hintEnabled="true">
+            app:boxBackgroundColor="@color/inputBoxColor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/mediumGreenColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/nameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/nameLabel"
-                android:inputType="number"
-                android:shadowColor="#A9A4A4"
-                android:shadowRadius="15"
+                android:inputType="text|textCapCharacters"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -124,6 +135,7 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="17dp"
             android:text="@string/passwordInputLabel"
+            android:textColor="@color/darkGreenTextColor"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -133,16 +145,27 @@
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             android:gravity="center"
-            android:hint="@string/inputPasswordLabel"
-
-            android:textColorHint="#FF758368">
+            app:boxBackgroundColor="@color/inputBoxColor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/mediumGreenColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/darkGreenTextColor">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#616161"
-                tools:ignore="TextContrastCheck" />
+                android:hint="@string/passwordInputLabel"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,6 +177,8 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="17dp"
             android:text="@string/passwordConfirmInputLabel"
+            android:textAlignment="textStart"
+            android:textColor="@color/darkGreenTextColor"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -163,16 +188,25 @@
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             android:gravity="center"
-            android:hint="@string/inputPasswordConfString"
-
-            android:textColorHint="#FF758368">
+            app:boxBackgroundColor="@color/inputBoxColor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/mediumGreenColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordConfirmInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#616161"
-                tools:ignore="TextContrastCheck" />
+                android:hint="@string/passwordConfirmInputLabel"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
+                tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,7 +216,11 @@
             android:layout_height="48dp"
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
-            android:text="@string/termsCheckLabel" />
+            android:text="@string/termsCheckLabel"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
+            android:textColorHighlight="@color/darkGreenTextColor"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:id="@+id/loginButtonsLayout"
@@ -194,12 +232,16 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/registerLoginButton"
+                android:id="@+id/registerUserButton"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purpleButtonsColor"
                 android:text="@string/registerButtonLabel"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 app:cornerRadius="10dp"
                 tools:ignore="ButtonStyle" />
 
@@ -208,16 +250,18 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/returnButtonReg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/returnRegisterButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
         android:layout_marginBottom="13dp"
         android:backgroundTint="#755944"
         android:contentDescription="@string/returnRegisterLabel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleText"
+        app:layout_constraintTop_toBottomOf="@+id/registerFormLayout"
+        app:layout_constraintVertical_bias="0.884"
         app:srcCompat="@android:drawable/ic_menu_revert" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
