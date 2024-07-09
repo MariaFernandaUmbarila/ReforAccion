@@ -8,4 +8,6 @@
     <color name="mediumGreenColor">#074311</color>
     <color name="inputBoxColor">#E1EDE1</color>
     <color name="buttonBackgroundColor">#3D4639</color>
+    <color name="lightBrownColor">#B86437</color>
+    <color name="darkBlueTextColor">#FF49454F</color>
 </resources>

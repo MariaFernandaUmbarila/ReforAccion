@@ -8,9 +8,16 @@
 
     <LinearLayout
         android:id="@+id/mainStatsLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="1dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/titleText"
@@ -19,28 +26,31 @@
             android:layout_marginStart="38dp"
             android:layout_marginTop="103dp"
             android:layout_marginEnd="38dp"
+            android:gravity="center"
             android:text="@string/titleLabel"
             android:textAlignment="center"
             android:textAllCaps="false"
-            android:textColor="#755944"
+            android:textColor="@color/brownTitleColor"
             android:textSize="48sp"
             android:textStyle="bold"
             tools:ignore="TextSizeCheck" />
 
         <TextView
             android:id="@+id/statsPagetext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="411dp"
+            android:layout_height="58dp"
             android:layout_margin="3dp"
             android:text="@string/statsButtonLabel"
             android:textAlignment="center"
+            android:textColor="@color/darkBlueTextColor"
             android:textSize="34sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:ignore="TextSizeCheck" />
 
         <ScrollView
             android:id="@+id/tableScrollView"
             android:layout_width="372dp"
-            android:layout_height="379dp"
+            android:layout_height="346dp"
             android:layout_gravity="center">
 
             <LinearLayout
@@ -52,7 +62,10 @@
                     android:id="@+id/statsTableLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:contextClickable="false"
                     android:gravity="center"
+                    android:textAlignment="center"
                     tools:ignore="UselessParent">
 
                     <TableRow
@@ -70,6 +83,7 @@
                             android:gravity="center"
                             android:text="@string/monthLabel"
                             android:textAlignment="center"
+                            android:textColor="@color/darkBlueTextColor"
                             android:textStyle="bold"
                             tools:ignore="TextSizeCheck" />
 
@@ -82,6 +96,7 @@
                             android:text="@string/plantsPlantedLabel"
                             android:textAlignment="center"
                             android:textAllCaps="false"
+                            android:textColor="@color/darkBlueTextColor"
                             android:textStyle="bold"
                             tools:ignore="TextSizeCheck" />
 
@@ -93,6 +108,7 @@
                             android:gravity="center"
                             android:text="@string/averageCostLabel"
                             android:textAlignment="center"
+                            android:textColor="@color/darkBlueTextColor"
                             android:textStyle="bold"
                             tools:ignore="TextSizeCheck" />
 
@@ -104,6 +120,7 @@
                             android:gravity="center"
                             android:text="@string/mostSownLabel"
                             android:textAlignment="center"
+                            android:textColor="@color/darkBlueTextColor"
                             android:textStyle="bold"
                             tools:ignore="TextSizeCheck" />
                     </TableRow>
@@ -114,13 +131,15 @@
 
         <TextView
             android:id="@+id/totalAverageText"
-            android:layout_width="348dp"
+            android:layout_width="361dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
             android:gravity="center"
             android:text="@string/totalAverageLabel"
             android:textAlignment="center"
+            android:textColor="@color/darkBlueTextColor"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -131,6 +150,8 @@
             android:gravity="center"
             android:text="@string/minPlantedLabel"
             android:textAlignment="center"
+            android:textColor="@color/darkBlueTextColor"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -142,15 +163,17 @@
             android:gravity="center"
             android:text="@string/maxPlantedLabel"
             android:textAlignment="center"
+            android:textColor="@color/darkBlueTextColor"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <ImageButton
             android:id="@+id/returnStatsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="41dp"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="13dp"
-            android:backgroundTint="#755944"
+            android:backgroundTint="@color/brownTitleColor"
             android:contentDescription="@string/returnRegisterLabel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -1,12 +1,10 @@
 package com.example.reforaccion;
 
 import android.os.Bundle;
-
+import android.widget.ImageButton;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 
 public class UserActivity extends AppCompatActivity {
 
@@ -15,5 +13,11 @@ public class UserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.user_activity);
+        returnUserButtonListener();
+    }
+
+    private void returnUserButtonListener(){
+        ImageButton returnUserButton = findViewById(R.id.returnUserButton);
+        returnUserButton.setOnClickListener(v -> finish());
     }
 }
