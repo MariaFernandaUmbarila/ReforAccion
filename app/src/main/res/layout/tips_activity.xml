@@ -81,7 +81,7 @@
         android:id="@+id/tipBButton"
         android:layout_width="234dp"
         android:layout_height="144dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="@color/lightHoneyBackColor"
         android:enabled="false"
         android:text="@string/tipBLabel"
@@ -90,12 +90,10 @@
         android:textSize="34sp"
         android:textStyle="bold"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tipAButton"
-        app:layout_constraintVertical_bias="1.0"
         tools:ignore="TextSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,7 @@
         android:layout_margin="7dp"
         android:text="@string/plantRegisterLabel"
         android:textAlignment="center"
+        android:textColor="@color/darkBlueTextColor"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/titleText"
@@ -25,15 +26,14 @@
         android:id="@+id/titleText"
         android:layout_width="334dp"
         android:layout_height="70dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="28dp"
         android:text="@string/titleLabel"
         android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#755944"
+        android:textColor="@color/brownTitleColor"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextSizeCheck,TextContrastCheck" />
 
@@ -43,12 +43,12 @@
         android:layout_height="393dp"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:layout_marginBottom="88dp"
         android:background="@drawable/form_background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextSizeCheck">
 
         <TextView
@@ -60,6 +60,8 @@
             android:layout_marginRight="17dp"
             android:text="@string/inputPlantsLabel"
             android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -70,8 +72,13 @@
             android:layout_marginRight="17dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColorHint="#758368"
-            app:hintEnabled="true">
+            app:boxBackgroundColor="@color/inputBoxColor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/darkGreenTextColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/plantsQuantityInput"
@@ -79,11 +86,10 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/inputPlantsLabel"
                 android:inputType="number"
-                android:shadowColor="#A9A4A4"
-                android:shadowRadius="15"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -96,6 +102,9 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="17dp"
             android:text="@string/individualCostLabel"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -107,14 +116,25 @@
             android:gravity="center"
             android:hint="@string/individualCostLabel"
             android:inputType="textPassword"
-            android:textColorHint="#FF758368">
+            android:textAlignment="center"
+            app:boxBackgroundColor="@color/inputBoxColor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/darkGreenTextColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/individualCostInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/individualCostLabel"
                 android:inputType="number|numberDecimal"
-                android:textColorHint="#616161"
+                android:textAlignment="center"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -127,6 +147,9 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="17dp"
             android:text="@string/monthLabel"
+            android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -137,8 +160,13 @@
             android:layout_marginRight="17dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColorHint="#758368"
-            app:hintEnabled="true">
+            app:boxBackgroundColor="@color/inputBoxColor"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/darkGreenTextColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/monthPlantedInput"
@@ -146,11 +174,10 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/monthPlantedLabel"
                 android:inputType="number"
-                android:shadowColor="#A9A4A4"
-                android:shadowRadius="15"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -170,10 +197,17 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purpleButtonsColor"
                 android:text="@string/registerCategoryLabel"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:cornerRadius="10dp"
                 app:icon="@android:drawable/ic_menu_add"
-                tools:ignore="ButtonStyle" />
+                app:iconGravity="start"
+                app:iconSize="24dp"
+                app:iconTint="@color/white" />
 
         </LinearLayout>
 
@@ -184,13 +218,14 @@
         android:layout_width="58dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
-        android:layout_marginBottom="13dp"
-        android:backgroundTint="#755944"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="@color/brownTitleColor"
         android:contentDescription="@string/returnRegisterLabel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/registerPlantFormLayout"
         app:srcCompat="@android:drawable/ic_menu_revert"
         tools:ignore="TouchTargetSizeCheck" />
 

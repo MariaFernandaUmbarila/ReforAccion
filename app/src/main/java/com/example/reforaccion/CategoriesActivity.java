@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,7 +25,6 @@ public class CategoriesActivity extends AppCompatActivity {
         plantsButton.setOnClickListener(v -> {
             Intent i = new Intent(CategoriesActivity.this, PlantRegisterActivity.class);
             startActivity(i);
-            finish();
         });
     }
 
@@ -35,7 +33,6 @@ public class CategoriesActivity extends AppCompatActivity {
         areaButton.setOnClickListener(v -> {
             Intent i = new Intent(CategoriesActivity.this, AreaRegisterActivity.class);
             startActivity(i);
-            finish();
         });
     }
 
