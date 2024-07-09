@@ -2,7 +2,6 @@ package com.example.reforaccion;
 
 import android.os.Bundle;
 import android.widget.ImageButton;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 

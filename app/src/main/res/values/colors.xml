@@ -10,4 +10,6 @@
     <color name="buttonBackgroundColor">#3D4639</color>
     <color name="lightBrownColor">#B86437</color>
     <color name="darkBlueTextColor">#FF49454F</color>
+    <color name="darkHoneyTextColor">#877A47</color>
+    <color name="lightHoneyBackColor">#F5DE7F</color>
 </resources>
