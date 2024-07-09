@@ -10,12 +10,12 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/titleTextView"
+        android:id="@+id/titleText"
         android:layout_width="334dp"
         android:layout_height="70dp"
         android:layout_marginTop="216dp"
         android:layout_marginEnd="36dp"
-        android:text="@string/titleText"
+        android:text="@string/titleLabel"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#755944"
@@ -41,7 +41,7 @@
         tools:ignore="TextSizeCheck">
 
         <TextView
-            android:id="@+id/inputCellLabel"
+            android:id="@+id/inputCellLoginText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
@@ -52,7 +52,7 @@
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/cellphoneLayout"
+            android:id="@+id/cellphoneLoginLayout"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_marginLeft="17dp"
@@ -63,10 +63,10 @@
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/cellphoneInput"
+                android:id="@+id/cellphoneLoginInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/cellphoneNumberString"
+                android:hint="@string/cellphoneNumberLabel"
                 android:inputType="number"
                 android:shadowColor="#A9A4A4"
                 android:shadowRadius="15"
@@ -78,7 +78,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
-            android:id="@+id/passwordLabel"
+            android:id="@+id/passwordLoginText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
@@ -88,22 +88,23 @@
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordLayout"
+            android:id="@+id/passwordLoginLayout"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             android:gravity="center"
-            android:hint="@string/inputPasswordString"
+            android:hint="@string/inputPasswordLabel"
             android:inputType="textPassword"
             android:textColorHint="#FF758368">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordInput"
+                android:id="@+id/passwordLoginInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#616161"
                 tools:ignore="TextContrastCheck" />
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
@@ -121,7 +122,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/loginButtonString"
+                android:text="@string/registerButtonLabel"
                 app:cornerRadius="10dp"
                 tools:ignore="ButtonStyle" />
 
@@ -131,10 +132,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/passwordTextInput"
+                android:text="@string/loginButtonLabel"
                 app:cornerRadius="10dp"
                 app:icon="@android:drawable/ic_lock_idle_lock"
                 tools:ignore="ButtonStyle" />
+
         </LinearLayout>
 
         <TextView
@@ -144,7 +146,7 @@
             android:layout_marginLeft="17dp"
             android:layout_marginTop="12dp"
             android:layout_marginRight="17dp"
-            android:text="@string/forgotPassTextString"
+            android:text="@string/forgotPassLabel"
             android:textAlignment="viewStart"
             android:textStyle="bold" />
 

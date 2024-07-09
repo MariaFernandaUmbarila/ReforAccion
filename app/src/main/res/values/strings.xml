@@ -1,19 +1,19 @@
 <resources>
     <string name="app_name">ReforAccion</string>
-    <string name="titleText">ReforAcción</string>
-    <string name="forgotPassTextString">¿Olvidaste la contraseña?</string>
-    <string name="cellphoneNumberString">Número de celular registrado</string>
-    <string name="passwordTextInput">Ingresar</string>
-    <string name="loginButtonString">Registrarse</string>
-    <string name="inputPasswordString">Ingrese la contraseña</string>
+    <string name="titleLabel">ReforAcción</string>
+    <string name="forgotPassLabel">¿Olvidaste la contraseña?</string>
+    <string name="cellphoneNumberLabel">Número de celular registrado</string>
+    <string name="loginButtonLabel">Ingresar</string>
+    <string name="registerButtonLabel">Registrarse</string>
+    <string name="inputPasswordLabel">Ingrese la contraseña</string>
     <string name="cellphoneInputLabel">Número de celular</string>
     <string name="passwordInputLabel">Contraseña</string>
-    <string name="nameString">Nombre a registrar</string>
+    <string name="nameLabel">Nombre a registrar</string>
     <string name="nameInputLabel">Nombre completo</string>
     <string name="passwordConfirmInputLabel">Confirmar contraseña</string>
     <string name="inputPasswordConfString">Confirme contraseña</string>
     <string name="termsCheckLabel">Acepto los términos y condiciones</string>
-    <string name="returnFromRegister">Retornar</string>
+    <string name="returnRegisterLabel">Retornar</string>
     <string name="statsButtonLabel">Estadísticas</string>
     <string name="catButtonLabel">Categorías</string>
     <string name="tipsButtonLabel">Consejos</string>
@@ -30,5 +30,8 @@
     <string name="individualCostLabel">Costo individual</string>
     <string name="monthPlantedLabel">Mes de plantación</string>
     <string name="registerCategoryLabel">Registrar</string>
-    <string name="plantRegisterTitle">Registro de plantas</string>
+    <string name="plantRegisterLabel">Registro de plantas</string>
+    <string name="areaRegisterLabel">Registro de áreas</string>
+    <string name="inputZoneLabel">Zona plantada</string>
+    <string name="areaPlantedLabel">Área en metros cuadrados</string>
 </resources>

@@ -13,13 +13,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/titleTextView"
+            android:id="@+id/titleText"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:layout_marginStart="38dp"
             android:layout_marginTop="103dp"
             android:layout_marginEnd="38dp"
-            android:text="@string/titleText"
+            android:text="@string/titleLabel"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="#755944"
@@ -28,7 +28,7 @@
             tools:ignore="TextSizeCheck" />
 
         <TextView
-            android:id="@+id/statsLabelPage"
+            android:id="@+id/statsPagetext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
@@ -38,6 +38,7 @@
             android:textStyle="bold" />
 
         <ScrollView
+            android:id="@+id/tableScrollView"
             android:layout_width="372dp"
             android:layout_height="379dp"
             android:layout_gravity="center">
@@ -150,7 +151,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="13dp"
             android:backgroundTint="#755944"
-            android:contentDescription="@string/returnFromRegister"
+            android:contentDescription="@string/returnRegisterLabel"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
