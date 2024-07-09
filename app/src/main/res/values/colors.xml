@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="brownTitleColor">#755944</color>
+    <color name="purpleButtonsColor">#381785</color>
+    <color name="darkGreenTextColor">#1D311A</color>
+    <color name="mediumGreenColor">#074311</color>
 </resources>

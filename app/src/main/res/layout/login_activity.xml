@@ -13,12 +13,12 @@
         android:id="@+id/titleText"
         android:layout_width="334dp"
         android:layout_height="70dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="136dp"
         android:layout_marginEnd="36dp"
         android:text="@string/titleLabel"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#755944"
+        android:textColor="@color/brownTitleColor"
         android:textSize="48sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,17 +27,17 @@
 
     <LinearLayout
         android:id="@+id/loginFormLayout"
-        android:layout_width="339dp"
-        android:layout_height="343dp"
+        android:layout_width="341dp"
+        android:layout_height="350dp"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="120dp"
         android:background="@drawable/form_background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleText"
         tools:ignore="TextSizeCheck">
 
         <TextView
@@ -49,18 +49,25 @@
             android:layout_marginRight="17dp"
             android:text="@string/cellphoneInputLabel"
             android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
+            android:textColorLink="@color/darkGreenTextColor"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/cellphoneLoginLayout"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="85dp"
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textColorHint="#758368"
-            app:hintEnabled="true">
+            app:boxBackgroundColor="#E1EDE1"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/darkGreenTextColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/cellphoneLoginInput"
@@ -68,11 +75,10 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/cellphoneNumberLabel"
                 android:inputType="number"
-                android:shadowColor="#A9A4A4"
-                android:shadowRadius="15"
                 android:textAlignment="center"
-                android:textColor="#000000"
-                android:textColorHint="#000000"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -85,24 +91,39 @@
             android:layout_marginTop="7dp"
             android:layout_marginRight="17dp"
             android:text="@string/passwordInputLabel"
+            android:textColor="@color/darkGreenTextColor"
+            android:textColorLink="@color/darkGreenTextColor"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordLoginLayout"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="85dp"
             android:layout_marginLeft="17dp"
             android:layout_marginRight="17dp"
             android:gravity="center"
-            android:hint="@string/inputPasswordLabel"
             android:inputType="textPassword"
-            android:textColorHint="#FF758368">
+            android:textAlignment="center"
+            app:boxBackgroundColor="#E1EDE1"
+            app:boxBackgroundMode="outline"
+            app:boxStrokeColor="@color/mediumGreenColor"
+            app:boxStrokeWidth="2dp"
+            app:cursorColor="@color/darkGreenTextColor"
+            app:expandedHintEnabled="false"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/darkGreenTextColor">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordLoginInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColorHint="#616161"
+                android:hint="@string/inputPasswordLabel"
+                android:inputType="textPassword"
+                android:textAlignment="center"
+                android:textColor="@color/darkGreenTextColor"
+                android:textColorHint="@color/darkGreenTextColor"
+                android:textStyle="bold"
                 tools:ignore="TextContrastCheck" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -122,7 +143,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purpleButtonsColor"
                 android:text="@string/registerButtonLabel"
+                android:textColor="#FFFFFF"
                 app:cornerRadius="10dp"
                 tools:ignore="ButtonStyle" />
 
@@ -132,9 +155,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:backgroundTint="@color/purpleButtonsColor"
                 android:text="@string/loginButtonLabel"
+                android:textColor="@color/white"
                 app:cornerRadius="10dp"
                 app:icon="@android:drawable/ic_lock_idle_lock"
+                app:iconGravity="start"
+                app:iconTint="@color/white"
                 tools:ignore="ButtonStyle" />
 
         </LinearLayout>
@@ -148,6 +175,7 @@
             android:layout_marginRight="17dp"
             android:text="@string/forgotPassLabel"
             android:textAlignment="viewStart"
+            android:textColor="@color/darkGreenTextColor"
             android:textStyle="bold" />
 
     </LinearLayout>
