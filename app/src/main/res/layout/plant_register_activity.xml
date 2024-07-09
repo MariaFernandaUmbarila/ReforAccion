@@ -10,10 +10,22 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/PlantLabelPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:text="@string/plantRegisterTitle"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        tools:layout_editor_absoluteX="6dp" />
+
+    <TextView
         android:id="@+id/titleTextView"
         android:layout_width="334dp"
         android:layout_height="70dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="88dp"
         android:layout_marginEnd="36dp"
         android:text="@string/titleText"
         android:textAlignment="center"
@@ -26,33 +38,32 @@
         tools:ignore="TextSizeCheck,TextContrastCheck" />
 
     <LinearLayout
-        android:id="@+id/loginFormLayout"
+        android:id="@+id/registerPlantFormLayout"
         android:layout_width="339dp"
-        android:layout_height="343dp"
+        android:layout_height="393dp"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="88dp"
         android:background="@drawable/form_background"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TextSizeCheck">
 
         <TextView
-            android:id="@+id/inputCellLabel"
+            android:id="@+id/inputPlantQuantity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
             android:layout_marginTop="25dp"
             android:layout_marginRight="17dp"
-            android:text="@string/cellphoneInputLabel"
+            android:text="@string/inputPlantsLabel"
             android:textAlignment="viewStart"
             android:textStyle="bold" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/cellphoneLayout"
+            android:id="@+id/plantsQuantityLayout"
             android:layout_width="match_parent"
             android:layout_height="75dp"
             android:layout_marginLeft="17dp"
@@ -63,10 +74,75 @@
             app:hintEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/cellphoneInput"
+                android:id="@+id/plantsQuantityInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/cellphoneNumberString"
+                android:hint="@string/inputPlantsLabel"
+                android:inputType="number"
+                android:shadowColor="#A9A4A4"
+                android:shadowRadius="15"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textColorHint="#000000"
+                tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/individualCostText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="17dp"
+            android:text="@string/individualCostLabel"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/indivualCostLayout"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:gravity="center"
+            android:hint="@string/individualCostLabel"
+            android:inputType="textPassword"
+            android:textColorHint="#FF758368">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/individualCostInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck,DuplicateSpeakableTextCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/monthText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginRight="17dp"
+            android:text="@string/monthLabel"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/monthPlantedLayout"
+            android:layout_width="306dp"
+            android:layout_height="75dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:textColorHint="#758368"
+            app:hintEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/monthPlantedInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/monthPlantedLabel"
                 android:inputType="number"
                 android:shadowColor="#A9A4A4"
                 android:shadowRadius="15"
@@ -77,37 +153,8 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/passwordLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="17dp"
-            android:text="@string/passwordInputLabel"
-            android:textStyle="bold" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/passwordLayout"
-            android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:layout_marginLeft="17dp"
-            android:layout_marginRight="17dp"
-            android:gravity="center"
-            android:hint="@string/inputPasswordString"
-            android:inputType="textPassword"
-            android:textColorHint="#FF758368">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/passwordInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="#616161"
-                tools:ignore="TextContrastCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <LinearLayout
-            android:id="@+id/loginButtonsLayout"
+            android:id="@+id/registerPlantLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="17dp"
@@ -116,38 +163,34 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/registerLoginButton"
-                android:layout_width="wrap_content"
+                android:id="@+id/registerPlantButton"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="@string/loginButtonString"
+                android:text="@string/registerCategoryLabel"
                 app:cornerRadius="10dp"
-                tools:ignore="ButtonStyle" />
-
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:text="@string/passwordTextInput"
-                app:cornerRadius="10dp"
-                app:icon="@android:drawable/ic_lock_idle_lock"
+                app:icon="@android:drawable/ic_menu_add"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/forgotPassText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="17dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginRight="17dp"
-            android:text="@string/forgotPassTextString"
-            android:textAlignment="viewStart"
-            android:textStyle="bold" />
-
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/returnButtonPlants"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="13dp"
+        android:backgroundTint="#755944"
+        android:contentDescription="@string/returnFromRegister"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView"
+        app:layout_constraintVertical_bias="0.969"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

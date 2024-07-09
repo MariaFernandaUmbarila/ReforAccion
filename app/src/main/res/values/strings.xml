@@ -15,8 +15,8 @@
     <string name="termsCheckLabel">Acepto los términos y condiciones</string>
     <string name="returnFromRegister">Retornar</string>
     <string name="statsButtonLabel">Estadísticas</string>
-    <string name="catButtonLabel">Categorías\n</string>
-    <string name="tipsButtonLabel">Consejos\n</string>
+    <string name="catButtonLabel">Categorías</string>
+    <string name="tipsButtonLabel">Consejos</string>
     <string name="plantsPlantedLabel">Cantidad de plantas plantadas</string>
     <string name="mostSownLabel">Zona con mayor siembra</string>
     <string name="monthLabel">Mes</string>
@@ -24,4 +24,11 @@
     <string name="totalAverageLabel">Promedio de costos:</string>
     <string name="minPlantedLabel">Mínimo plantado:</string>
     <string name="maxPlantedLabel">Máximo plantado:</string>
+    <string name="plantsCatLabel">Plantas</string>
+    <string name="areasCatLabel">Áreas plantadas</string>
+    <string name="inputPlantsLabel">Cantidad plantada</string>
+    <string name="individualCostLabel">Costo individual</string>
+    <string name="monthPlantedLabel">Mes de plantación</string>
+    <string name="registerCategoryLabel">Registrar</string>
+    <string name="plantRegisterTitle">Registro de plantas</string>
 </resources>
