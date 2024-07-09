@@ -34,4 +34,6 @@
     <string name="areaRegisterLabel">Registro de áreas</string>
     <string name="inputZoneLabel">Zona plantada</string>
     <string name="areaPlantedLabel">Área en metros cuadrados</string>
+    <string name="tipALabel">Aquí va el primer consejo</string>
+    <string name="tipBLabel">Aquí va el segundo consejo</string>
 </resources>
