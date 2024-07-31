@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.reforaccion" />
+                  <option name="mobileSdkAppId" value="1:313091293875:android:f07f2a6b1ac7c03f0066c6" />
+                  <option name="projectId" value="reforaccion" />
+                  <option name="projectNumber" value="313091293875" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

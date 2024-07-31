@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "313091293875",
+    "project_id": "reforaccion",
+    "storage_bucket": "reforaccion.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313091293875:android:f07f2a6b1ac7c03f0066c6",
+        "android_client_info": {
+          "package_name": "com.example.reforaccion"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDvbS2hylhc-PW2YM7wOy21ducX8jOxZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
