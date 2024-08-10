@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.reforaccion"
     compileSdk = 34
 
@@ -31,11 +32,18 @@ android {
     }
     buildFeatures{
         viewBinding = true
+        dataBinding {
+            enable = true
+        }
     }
 }
 
 dependencies {
     implementation(platform(libs.firebase.bom))
+    implementation(libs.lifecycle.viewmodel)
+    implementation(libs.lifecycle.runtime)
+    implementation (libs.databinding.runtime)
+    implementation (libs.lifecycle.livedata)
     implementation(libs.firebase.analytics)
     implementation(libs.google.firebase.firestore)
     implementation(libs.firebase.database)
