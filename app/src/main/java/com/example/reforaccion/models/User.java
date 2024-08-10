@@ -1,9 +1,8 @@
 package com.example.reforaccion.models;
 
-import android.app.Application;
 import java.util.Date;
 
-public class User extends Application{
+public class User {
 
     public String cellphone;
     public String userName;

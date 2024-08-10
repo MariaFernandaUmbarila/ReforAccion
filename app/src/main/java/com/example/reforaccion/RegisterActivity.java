@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.reforaccion.helpers.Encrypt;
-import com.example.reforaccion.helpers.Reflection;
 import com.example.reforaccion.models.User;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,7 +34,6 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.register_activity);
-
         initiateVars();
         registerUserButtonListener();
         returnButtonListener();
@@ -91,7 +89,8 @@ public class RegisterActivity extends AppCompatActivity {
                 //Adds the User object as a document to Firestore collection
                 try {
                     db.collection("users")
-                    .add(Reflection.objectToMap(user))
+                    .document(user.getCellphone())
+                    .set(user)
                     .addOnSuccessListener(doc -> {
                         Log.d(TAG, "DocumentSnapshot successfully written!" + doc);
                         Toast.makeText(getApplicationContext(), "Usuario creado correctamente", Toast.LENGTH_LONG).show();
@@ -102,7 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Log.w(TAG, "Error writing document", e);
                         Toast.makeText(getApplicationContext(), "No se pudo crear el usuario, intente de nuevo", Toast.LENGTH_LONG).show();
                     });
-                } catch (IllegalAccessException e) {
+                } catch (Error e) {
                     Log.w(TAG, "Error writing document", e);
                     throw new RuntimeException(e);
                 }
