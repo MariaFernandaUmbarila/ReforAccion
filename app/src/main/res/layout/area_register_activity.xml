@@ -172,7 +172,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/monthPlantedLabel"
-                android:inputType="number"
+                android:inputType="datetime|date"
                 android:textAlignment="center"
                 android:textColor="@color/darkGreenTextColor"
                 android:textColorHint="@color/darkGreenTextColor"

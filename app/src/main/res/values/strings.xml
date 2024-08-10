@@ -19,7 +19,7 @@
     <string name="tipsButtonLabel">Consejos</string>
     <string name="plantsPlantedLabel">Cantidad de plantas plantadas</string>
     <string name="mostSownLabel">Zona con mayor siembra</string>
-    <string name="monthLabel">Mes</string>
+    <string name="monthLabel">Fecha</string>
     <string name="averageCostLabel">Costo promedio</string>
     <string name="totalAverageLabel">Promedio de costos:</string>
     <string name="minPlantedLabel">Mínimo plantado:</string>
@@ -28,7 +28,7 @@
     <string name="areasCatLabel">Áreas plantadas</string>
     <string name="inputPlantsLabel">Cantidad plantada</string>
     <string name="individualCostLabel">Costo individual</string>
-    <string name="monthPlantedLabel">Mes de plantación</string>
+    <string name="monthPlantedLabel">Fecha de plantación</string>
     <string name="registerCategoryLabel">Registrar</string>
     <string name="plantRegisterLabel">Registro de plantas</string>
     <string name="areaRegisterLabel">Registro de áreas</string>
