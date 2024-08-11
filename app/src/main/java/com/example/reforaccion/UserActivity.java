@@ -50,7 +50,11 @@ public class UserActivity extends AppCompatActivity {
     private void returnUserButtonListener(){
         ImageButton returnUserButton = findViewById(R.id.returnUserButton);
         returnUserButton.setOnClickListener(v -> {
-            Intent i = new Intent(UserActivity.this, MainActivity.class);
+            Intent i;
+            if(currentUser.user != null)
+                i = new Intent(UserActivity.this, MainActivity.class);
+            else
+                i = new Intent(UserActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }

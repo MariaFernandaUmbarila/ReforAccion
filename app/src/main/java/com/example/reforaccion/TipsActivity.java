@@ -1,7 +1,6 @@
 package com.example.reforaccion;
 
 import static android.content.ContentValues.TAG;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +10,7 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.reforaccion.models.Tips;
+import com.example.reforaccion.models.UserApplication;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -26,6 +26,7 @@ public class TipsActivity extends AppCompatActivity {
     Button secondTip;
     List<Tips> tips;
     int tipsQty = 2;
+    UserApplication currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class TipsActivity extends AppCompatActivity {
         firstTip = findViewById(R.id.tipAButton);
         secondTip = findViewById(R.id.tipBButton);
         tips = new ArrayList<>();
+        currentUser = (UserApplication) getApplicationContext();
     }
 
     private void getRandomDocuments(int numberOfDocuments) {
@@ -78,7 +80,11 @@ public class TipsActivity extends AppCompatActivity {
     private void returnTipsButtonListener(){
         ImageButton returnTipsButton = findViewById(R.id.returnTipsButton);
         returnTipsButton.setOnClickListener(v -> {
-            Intent i = new Intent(TipsActivity.this, MainActivity.class);
+            Intent i;
+            if(currentUser.user != null)
+                i = new Intent(TipsActivity.this, MainActivity.class);
+            else
+                i = new Intent(TipsActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }

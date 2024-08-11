@@ -120,7 +120,7 @@ public class RegisterActivity extends AppCompatActivity {
     private void returnButtonListener(){
         ImageButton returnButton = findViewById(R.id.returnRegisterButton);
         returnButton.setOnClickListener(v -> {
-            Intent i = new Intent(RegisterActivity.this, MainActivity.class);
+            Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }

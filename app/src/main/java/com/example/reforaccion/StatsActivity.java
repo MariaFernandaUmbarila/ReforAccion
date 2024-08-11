@@ -237,7 +237,11 @@ public class StatsActivity extends AppCompatActivity {
     private void returnStatsButtonListener(){
         ImageButton returnUserButton = findViewById(R.id.returnStatsButton);
         returnUserButton.setOnClickListener(v -> {
-            Intent i = new Intent(StatsActivity.this, MainActivity.class);
+            Intent i;
+            if(currentUser.user != null)
+                i = new Intent(StatsActivity.this, MainActivity.class);
+            else
+                i = new Intent(StatsActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }

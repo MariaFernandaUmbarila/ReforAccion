@@ -111,7 +111,11 @@ public class PlantRegisterActivity extends AppCompatActivity {
     private void returnPlantButtonListener(){
         ImageButton returnPlantButton = findViewById(R.id.returnPlantsButton);
         returnPlantButton.setOnClickListener(v -> {
-            Intent i = new Intent(PlantRegisterActivity.this, CategoriesActivity.class);
+            Intent i;
+            if(currentUser.user != null)
+                i = new Intent(PlantRegisterActivity.this, CategoriesActivity.class);
+            else
+                i = new Intent(PlantRegisterActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }

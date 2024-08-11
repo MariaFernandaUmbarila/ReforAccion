@@ -108,7 +108,11 @@ public class AreaRegisterActivity extends AppCompatActivity {
     private void returnAreaButtonListener(){
         ImageButton returnAreaButton = findViewById(R.id.returnAreaButton);
         returnAreaButton.setOnClickListener(v -> {
-            Intent i = new Intent(AreaRegisterActivity.this, CategoriesActivity.class);
+            Intent i;
+            if(currentUser.user != null)
+                i = new Intent(AreaRegisterActivity.this, CategoriesActivity.class);
+            else
+                i = new Intent(AreaRegisterActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }

@@ -7,14 +7,19 @@ import android.widget.ImageButton;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.reforaccion.models.UserApplication;
+
 
 public class CategoriesActivity extends AppCompatActivity {
+
+    UserApplication currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.categories_activity);
+        currentUser = (UserApplication) getApplicationContext();
         plantsButtonListener();
         areaButtonListener();
         returnCateButtonListener();
@@ -39,7 +44,11 @@ public class CategoriesActivity extends AppCompatActivity {
     private void returnCateButtonListener(){
         ImageButton returnCateButton = findViewById(R.id.returnCateButton);
         returnCateButton.setOnClickListener(v -> {
-            Intent i = new Intent(CategoriesActivity.this, MainActivity.class);
+            Intent i;
+            if(currentUser.user != null)
+                i = new Intent(CategoriesActivity.this, MainActivity.class);
+            else
+                i = new Intent(CategoriesActivity.this, LoginActivity.class);
             startActivity(i);
         });
     }
