@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
+
 public class RegisterActivity extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -118,6 +119,9 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void returnButtonListener(){
         ImageButton returnButton = findViewById(R.id.returnRegisterButton);
-        returnButton.setOnClickListener(v -> finish());
+        returnButton.setOnClickListener(v -> {
+            Intent i = new Intent(RegisterActivity.this, MainActivity.class);
+            startActivity(i);
+        });
     }
 }

@@ -38,6 +38,9 @@ public class CategoriesActivity extends AppCompatActivity {
 
     private void returnCateButtonListener(){
         ImageButton returnCateButton = findViewById(R.id.returnCateButton);
-        returnCateButton.setOnClickListener(v -> finish());
+        returnCateButton.setOnClickListener(v -> {
+            Intent i = new Intent(CategoriesActivity.this, MainActivity.class);
+            startActivity(i);
+        });
     }
 }

@@ -95,11 +95,6 @@ public class AreaRegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void returnAreaButtonListener(){
-        ImageButton returnAreaButton = findViewById(R.id.returnAreaButton);
-        returnAreaButton.setOnClickListener(v -> finish());
-    }
-
     private static boolean isMonth(String input) {
 
         String[] months = { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE" };
@@ -108,5 +103,13 @@ public class AreaRegisterActivity extends AppCompatActivity {
                 return true;
         }
         return false;
+    }
+
+    private void returnAreaButtonListener(){
+        ImageButton returnAreaButton = findViewById(R.id.returnAreaButton);
+        returnAreaButton.setOnClickListener(v -> {
+            Intent i = new Intent(AreaRegisterActivity.this, CategoriesActivity.class);
+            startActivity(i);
+        });
     }
 }

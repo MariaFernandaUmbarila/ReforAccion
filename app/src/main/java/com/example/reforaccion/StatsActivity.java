@@ -2,6 +2,7 @@ package com.example.reforaccion;
 
 import static android.content.ContentValues.TAG;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,6 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+
 
 public class StatsActivity extends AppCompatActivity {
 
@@ -157,9 +159,9 @@ public class StatsActivity extends AppCompatActivity {
                     populateTableLayout(stats);
 
                 }else
-                    Toast.makeText(getApplicationContext(), "No pudo obtenerse la infromación", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No pudo obtenerse la información", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getApplicationContext(), "No pudo obtenerse la infromación", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "No pudo obtenerse la información", Toast.LENGTH_SHORT).show();
                 Log.d(TAG, "Stats got failed with ", task.getException());
             }
         });
@@ -234,6 +236,9 @@ public class StatsActivity extends AppCompatActivity {
 
     private void returnStatsButtonListener(){
         ImageButton returnUserButton = findViewById(R.id.returnStatsButton);
-        returnUserButton.setOnClickListener(v -> finish());
+        returnUserButton.setOnClickListener(v -> {
+            Intent i = new Intent(StatsActivity.this, MainActivity.class);
+            startActivity(i);
+        });
     }
 }

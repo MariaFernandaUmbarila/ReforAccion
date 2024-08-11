@@ -49,6 +49,9 @@ public class UserActivity extends AppCompatActivity {
 
     private void returnUserButtonListener(){
         ImageButton returnUserButton = findViewById(R.id.returnUserButton);
-        returnUserButton.setOnClickListener(v -> finish());
+        returnUserButton.setOnClickListener(v -> {
+            Intent i = new Intent(UserActivity.this, MainActivity.class);
+            startActivity(i);
+        });
     }
 }

@@ -98,11 +98,6 @@ public class PlantRegisterActivity extends AppCompatActivity {
         });
     }
 
-    private void returnPlantButtonListener(){
-        ImageButton returnPlantButton = findViewById(R.id.returnPlantsButton);
-        returnPlantButton.setOnClickListener(v -> finish());
-    }
-
     private static boolean isMonth(String input) {
 
         String[] months = { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE" };
@@ -111,5 +106,13 @@ public class PlantRegisterActivity extends AppCompatActivity {
                 return true;
         }
         return false;
+    }
+
+    private void returnPlantButtonListener(){
+        ImageButton returnPlantButton = findViewById(R.id.returnPlantsButton);
+        returnPlantButton.setOnClickListener(v -> {
+            Intent i = new Intent(PlantRegisterActivity.this, CategoriesActivity.class);
+            startActivity(i);
+        });
     }
 }
