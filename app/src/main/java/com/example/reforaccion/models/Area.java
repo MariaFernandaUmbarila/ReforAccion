@@ -5,15 +5,13 @@ public class Area {
     public String zonePlanted;
     public Double areaPlanted;
     public String datePlanted;
-    public User userCellphone;
 
     public Area(){}
 
-    public Area(String zonePlanted, Double areaPlanted, String datePlanted, User userCellphone) {
+    public Area(String zonePlanted, Double areaPlanted, String datePlanted) {
         this.zonePlanted = zonePlanted;
         this.areaPlanted = areaPlanted;
         this.datePlanted = datePlanted;
-        this.userCellphone = userCellphone;
     }
 
     public String getZonePlanted() {
@@ -32,19 +30,11 @@ public class Area {
         this.areaPlanted = areaPlanted;
     }
 
-    public String getDatePlanted() {
-        return datePlanted;
-    }
+    public String getDatePlanted() {  return datePlanted; }
 
     public void setDatePlanted(String datePlanted) {
         this.datePlanted = datePlanted;
     }
 
-    public User getUserCellphone() {
-        return userCellphone;
-    }
 
-    public void setUserCellphone(User userCellphone) {
-        this.userCellphone = userCellphone;
-    }
 }

@@ -56,15 +56,17 @@ public class PlantRegisterActivity extends AppCompatActivity {
             //Get current user from context and db
             DocumentReference docRef = db.collection("users").document(currentUser.user.getCellphone());
 
-            //Checks for the quantity to be more than 0
-            if(Integer.parseInt(Objects.requireNonNull(quantity.getText()).toString()) > 0){
-                validations.set(0, true);
-            }else Toast.makeText(getApplicationContext(), "Cantidad debe ser mayor a 0", Toast.LENGTH_SHORT).show();
+            if(!Objects.requireNonNull(quantity.getText()).toString().isEmpty() && !Objects.requireNonNull(individualCost.getText()).toString().isEmpty()){
+                //Checks for the quantity to be more than 0
+                if(Integer.parseInt(Objects.requireNonNull(quantity.getText()).toString()) > 0){
+                    validations.set(0, true);
+                }else Toast.makeText(getApplicationContext(), "Cantidad debe ser mayor a 0", Toast.LENGTH_SHORT).show();
 
-            //Checks for the individual cost to be more than 0
-            if(Double.parseDouble(Objects.requireNonNull(individualCost.getText()).toString()) > 0){
-                validations.set(1, true);
-            }else Toast.makeText(getApplicationContext(), "Cantidad debe ser mayor a 0", Toast.LENGTH_SHORT).show();
+                //Checks for the individual cost to be more than 0
+                if(Double.parseDouble(Objects.requireNonNull(individualCost.getText()).toString()) > 0){
+                    validations.set(1, true);
+                }else Toast.makeText(getApplicationContext(), "Cantidad debe ser mayor a 0", Toast.LENGTH_SHORT).show();
+            }else Toast.makeText(getApplicationContext(), "Ingrese datos para continuar", Toast.LENGTH_SHORT).show();
 
             //Checks for the month to be in the month list
             if(isMonth(Objects.requireNonNull(datePlanted.getText()).toString().trim())){
@@ -79,7 +81,7 @@ public class PlantRegisterActivity extends AppCompatActivity {
                         Objects.requireNonNull(datePlanted.getText()).toString()
                 );
 
-                //Updates the plant array in db
+                //Updates the plant array in db for the current user
                 docRef.update("plants", FieldValue.arrayUnion(newPlant))
                         .addOnSuccessListener(aVoid -> {
                             Toast.makeText(getApplicationContext(), "Añadido con éxito", Toast.LENGTH_SHORT).show();
@@ -102,17 +104,11 @@ public class PlantRegisterActivity extends AppCompatActivity {
     }
 
     private static boolean isMonth(String input) {
-        // Define the valid month names
-        String[] months = {
-                "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",
-                "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE"
-        };
 
-        // Check if the input matches any of the month names
+        String[] months = { "ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE" };
         for (String month : months) {
-            if (month.equalsIgnoreCase(input)) {
+            if (month.equalsIgnoreCase(input))
                 return true;
-            }
         }
         return false;
     }
