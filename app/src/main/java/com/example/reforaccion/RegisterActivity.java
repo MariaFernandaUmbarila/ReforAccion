@@ -11,6 +11,8 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.reforaccion.helpers.Encrypt;
+import com.example.reforaccion.models.Area;
+import com.example.reforaccion.models.Plant;
 import com.example.reforaccion.models.User;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -83,7 +85,9 @@ public class RegisterActivity extends AppCompatActivity {
                     name.getText().toString(),
                     Encrypt.encryptPassword(password.getText().toString()),
                     new Date(),
-                    termsAccepted.isChecked()
+                    termsAccepted.isChecked(),
+                    new ArrayList<Plant>(),
+                    new ArrayList<Area>()
                 );
 
                 //Adds the User object as a document to Firestore collection

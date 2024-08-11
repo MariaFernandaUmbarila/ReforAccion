@@ -24,7 +24,6 @@ public class AreaRegisterActivity extends AppCompatActivity {
         areaRegister.setOnClickListener(v -> {
             Intent i = new Intent(AreaRegisterActivity.this, MainActivity.class);
             startActivity(i);
-            finish();
         });
     }
 

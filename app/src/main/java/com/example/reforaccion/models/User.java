@@ -1,5 +1,6 @@
 package com.example.reforaccion.models;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
@@ -9,16 +10,24 @@ public class User {
     public String password;
     public Date createdAt;
     public boolean termsAccepted;
+    public ArrayList<Area> areas;
+    public ArrayList<Plant> plants;
 
     public User(){}
 
-    public User(String cellphone, String userName, String password, Date createdAt, boolean termsAccepted) {
+    public User(String cellphone, String userName, String password, Date createdAt, boolean termsAccepted, ArrayList<Plant> plants, ArrayList<Area> areas) {
         this.cellphone = cellphone;
         this.userName = userName;
         this.password = password;
         this.createdAt = createdAt;
         this.termsAccepted = termsAccepted;
+        this.plants = plants;
+        this.areas = areas;
     }
+
+    public ArrayList<Area> getAreas() { return areas; }
+
+    public void setAreas(ArrayList<Area> areas) { this.areas = areas; }
 
     public String getCellphone() {
         return cellphone;
@@ -59,5 +68,9 @@ public class User {
     public void setTermsAccepted(boolean termsAccepted) {
         this.termsAccepted = termsAccepted;
     }
+
+    public ArrayList<Plant> getPlants() { return plants; }
+
+    public void setPlants(ArrayList<Plant> plants) { this.plants = plants; }
 }
 

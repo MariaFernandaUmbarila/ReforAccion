@@ -49,6 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.526"
         tools:ignore="TextSizeCheck">
 
         <TextView
@@ -173,7 +174,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/monthPlantedLabel"
-                android:inputType="datetime|date"
+                android:inputType="text|textCapCharacters"
                 android:textAlignment="center"
                 android:textColor="@color/darkGreenTextColor"
                 android:textColorHint="@color/darkGreenTextColor"

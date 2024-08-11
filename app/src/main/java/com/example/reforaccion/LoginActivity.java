@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
     private void initiateVars(){
         cellphone = findViewById(R.id.cellphoneLoginInput);
         password = findViewById(R.id.passwordLoginInput);
+        appUser = (UserApplication) getApplicationContext();
     }
 
     private void registerButtonListener(){
@@ -51,10 +52,6 @@ public class LoginActivity extends AppCompatActivity {
     private void loginButtonListener(){
         Button loginButton = findViewById(R.id.loginButton);
         loginButton.setOnClickListener(v -> {
-
-            //Creates an Context User
-            appUser = (UserApplication) getApplicationContext().getClass().cast(appUser);
-            appUser = new UserApplication();
 
             if(!Objects.requireNonNull(cellphone.getText()).toString().isEmpty() && !Objects.requireNonNull(password.getText()).toString().isEmpty()){
                 DocumentReference docRef = db.collection("users").document(cellphone.getText().toString());
