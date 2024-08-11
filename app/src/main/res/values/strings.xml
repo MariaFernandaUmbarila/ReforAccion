@@ -22,13 +22,13 @@
     <string name="monthLabel">Fecha</string>
     <string name="averageCostLabel">Costo promedio</string>
     <string name="totalAverageLabel">Promedio de costos:</string>
-    <string name="minPlantedLabel">Mínimo plantado:</string>
-    <string name="maxPlantedLabel">Máximo plantado:</string>
+    <string name="minPlantedLabel">Mes mínimo plantado:</string>
+    <string name="maxPlantedLabel">Mes máximo plantado:</string>
     <string name="plantsCatLabel">Plantas</string>
     <string name="areasCatLabel">Áreas plantadas</string>
     <string name="inputPlantsLabel">Cantidad plantada</string>
     <string name="individualCostLabel">Costo individual</string>
-    <string name="monthPlantedLabel">Fecha de plantación</string>
+    <string name="monthPlantedLabel">Mes de plantación</string>
     <string name="registerCategoryLabel">Registrar</string>
     <string name="plantRegisterLabel">Registro de plantas</string>
     <string name="areaRegisterLabel">Registro de áreas</string>

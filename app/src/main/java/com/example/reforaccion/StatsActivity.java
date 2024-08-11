@@ -1,10 +1,15 @@
 package com.example.reforaccion;
 
 import static android.content.ContentValues.TAG;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.Toast;
+import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.reforaccion.models.Area;
@@ -25,6 +30,13 @@ public class StatsActivity extends AppCompatActivity {
     UserApplication currentUser;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     Map<String, Stats> stats;
+    TableLayout statsTable;
+    TextView allCostAvg;
+    TextView minPlantsText;
+    TextView maxPlantsText;
+    Double averageCost;
+    Integer minPlanted;
+    Integer maxPlanted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +50,13 @@ public class StatsActivity extends AppCompatActivity {
 
     private void initiateVars(){
         currentUser = (UserApplication) getApplicationContext();
+        statsTable = findViewById(R.id.statsTableLayout);
+        allCostAvg = findViewById(R.id.totalAverageText);
+        minPlantsText = findViewById(R.id.minPlantedText);
+        maxPlantsText = findViewById(R.id.maxPlantedText);
+        averageCost = 0.0;
+        minPlanted = 0;
+        maxPlanted = 0;
         stats = new HashMap<>();
     }
 
@@ -54,7 +73,7 @@ public class StatsActivity extends AppCompatActivity {
                     if (!Objects.requireNonNull(plants).isEmpty()) {
 
                         //Create a HashMap to save the grouped data
-                        Map<String, List<Plant>> monthlyGroups = new HashMap<>(); //A
+                        Map<String, List<Plant>> monthlyGroups = new HashMap<>();
                         for (Map<String, Object> plantMap : plants) {
 
                             //Creates a plant object for each Plant array element
@@ -69,22 +88,20 @@ public class StatsActivity extends AppCompatActivity {
                         }
 
                         //Access every Plant element in the list
-                        for (Map.Entry<String, List<Plant>> entry : monthlyGroups.entrySet()) { //A_i
+                        for (Map.Entry<String, List<Plant>> entry : monthlyGroups.entrySet()) {
 
                             String month = entry.getKey();
                             List<Plant> plantsInMonth = entry.getValue();
                             //Variables for each month stats
                             Double averagePrice = 0.0;
                             Integer totalPlants = 0;
-                            int plantCounter = 0;
 
-                            for (Plant plant : plantsInMonth) { //A_ij
+                            for (Plant plant : plantsInMonth) {
                                 //Calculates every statistic
                                 averagePrice += plant.getIndividualPrice();
                                 totalPlants +=  plant.getQuantity();
-                                plantCounter++;
-                                if(plantCounter == plantsInMonth.size()) averagePrice = averagePrice / plantCounter;
                             }
+                            averagePrice = averagePrice / plantsInMonth.size();
 
                             //Creates a stats object and adds it to the global list
                             Stats newMonthStat = new Stats(month, totalPlants, averagePrice, "");
@@ -99,7 +116,7 @@ public class StatsActivity extends AppCompatActivity {
                     if (!Objects.requireNonNull(areas).isEmpty()) {
 
                         //Create a HashMap to save the grouped data
-                        Map<String, List<Area>> monthlyGroups = new HashMap<>(); //B
+                        Map<String, List<Area>> monthlyGroups = new HashMap<>();
                         for (Map<String, Object> areaMap : areas) {
 
                             //Creates an area object for each Area array element
@@ -116,15 +133,13 @@ public class StatsActivity extends AppCompatActivity {
                         //Variables for area stats
                         double maxArea = 0.0;
                         String maxZone = "";
-                        String qrMonth = "";
 
                         //Access every Plant element in the list
-                        for (Map.Entry<String, List<Area>> entry : monthlyGroups.entrySet()) { //A_i
-
+                        for (Map.Entry<String, List<Area>> entry : monthlyGroups.entrySet()) {
                             String month = entry.getKey();
                             List<Area> areasInMonth = entry.getValue();
                             Double areaPlanted = 0.0;
-                            for (Area area : areasInMonth) { //A_ij
+                            for (Area area : areasInMonth) {
                                 areaPlanted += area.getAreaPlanted();
                                 maxZone = area.getZonePlanted();
                             }
@@ -132,17 +147,14 @@ public class StatsActivity extends AppCompatActivity {
                             if(areaPlanted > maxArea)
                                 maxArea = areaPlanted;
 
-                            qrMonth = month;
+                            //Updates the hashmap
+                            Stats monthStats = stats.get(month);
+                            if (monthStats != null) monthStats.setMostPlantedZone(maxZone);
                         }
 
-                        //Updates the hashmap
-                        Stats monthStats = stats.get(qrMonth);
-                        if (monthStats != null) monthStats.setMostPlantedZone(maxZone);
-                        Log.d(TAG,"Second " + monthStats);
-
                     }
-
-                    Log.d(TAG,"Third " + stats.toString());
+                    //Adding the data to the table
+                    populateTableLayout(stats);
 
                 }else
                     Toast.makeText(getApplicationContext(), "No pudo obtenerse la infromación", Toast.LENGTH_SHORT).show();
@@ -152,6 +164,72 @@ public class StatsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void populateTableLayout(Map<String, Stats> statsMap) {
+
+        Integer minPlanted = 0;
+        Integer maxPlanted = 0;
+        String minMonth = "";
+        String maxMonth = "";
+
+        // Iterate over the hashmap
+        for (Map.Entry<String, Stats> entry : statsMap.entrySet()) {
+
+            String key = entry.getKey();
+            Stats stats = entry.getValue();
+            //New row to add to the table
+            TableRow tableRow = new TableRow(this);
+
+            // Textview for each col on the table
+            TextView keyTextView = new TextView(this);
+            keyTextView.setTextColor(getResources().getColor(R.color.darkBlueTextColor));
+            keyTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            keyTextView.setText(key); //Month col
+            tableRow.addView(keyTextView);
+
+            TextView plantedTextView = new TextView(this);
+            plantedTextView.setText(String.valueOf(stats.getTotalPlanted())); //Total planted col
+            plantedTextView.setTextColor(getResources().getColor(R.color.darkBlueTextColor));
+            plantedTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            tableRow.addView(plantedTextView);
+
+            TextView avgTextView = new TextView(this);
+            avgTextView.setText("$" + stats.getAveragePriceMonth()); //Avg per month
+            avgTextView.setTextColor(getResources().getColor(R.color.darkBlueTextColor));
+            avgTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            tableRow.addView(avgTextView);
+
+            TextView zoneTextView = new TextView(this);
+            zoneTextView.setText(String.valueOf(stats.getMostPlantedZone())); //Zone
+            zoneTextView.setTextColor(getResources().getColor(R.color.darkBlueTextColor));
+            zoneTextView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            tableRow.addView(zoneTextView);
+
+            //Adding the row
+            statsTable.addView(tableRow);
+            //Calculation for other stats
+            averageCost += stats.getAveragePriceMonth();
+            if(stats.getTotalPlanted() > maxPlanted){
+                maxPlanted = stats.getTotalPlanted();
+                if(minPlanted == 0) {
+                    minPlanted = maxPlanted;
+                    minMonth = key;
+                };
+                maxMonth = key;
+            }
+            if(stats.getTotalPlanted() < minPlanted){
+                minPlanted = stats.getTotalPlanted();
+                minMonth = key;
+            }
+        }
+
+        //Sets the all-over stats
+        averageCost = averageCost / statsMap.size();
+        allCostAvg.setText(getResources().getString(R.string.totalAverageLabel) + " $" + averageCost);
+        maxPlantsText.setText(getResources().getString(R.string.maxPlantedLabel) + " " + maxMonth);
+        minPlantsText.setText(getResources().getString(R.string.minPlantedLabel) + " " + minMonth);
     }
 
     private void returnStatsButtonListener(){
